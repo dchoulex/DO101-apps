@@ -24,6 +24,7 @@ router.get('/', function(req, res) {
           res.render('index', { error: 'Database connection failure! '+err.stack, contacts: null, title: 'Contact List' });
         }
         else {
+          console.log(results)
           let contacts = results.rows;
           console.log(contacts);
           res.render('index', { error: null, contacts: contacts, title: 'Contact List' });
